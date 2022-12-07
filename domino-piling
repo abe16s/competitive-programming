@@ -1,0 +1,5 @@
+sides=input()
+x=sides.index(" ")
+m=int(sides[:x])
+n=int(sides[x+1:])
+print(m*n//2)
