@@ -1,0 +1,11 @@
+def countingSort(arr):
+    arra=list([0]*100)
+    for i in range(100):
+        for j in arr:
+            if i==j:
+                arra[i]+=1
+    cout=""
+    for i in arra:
+        cout+=str(i)
+    return cout
+    
