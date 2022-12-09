@@ -1,0 +1,12 @@
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        cout=[]
+        def dis(i):
+            return ((i[0]**2)+(i[1]**2))**(1/2)
+        dist=list(map(dis,points))
+        mins=sorted(dist)[:k]
+        max=mins[-1]
+        for l in range(len(points)):
+            if (((points[l][0]**2)+(points[l][1]**2))**(1/2))<=max:
+                cout.append(points[l])
+        return cout
