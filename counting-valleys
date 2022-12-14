@@ -1,0 +1,13 @@
+def countingValleys(steps, path):
+    i=0
+    level=0
+    valley_ctr=0
+    while i<steps:
+        if path[i].upper()=="U":
+            level+=1
+            if level==0:
+                valley_ctr+=1
+        elif path[i].upper()=="D":
+            level-=1
+        i+=1
+    return valley_ctr
