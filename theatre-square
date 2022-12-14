@@ -1,0 +1,12 @@
+def flagstone(n,m,a):
+	if n%a==0:
+		x=n/a
+	else:
+		x=n//a+1
+	if m%a==0:
+		y=m/a
+	else:
+		y=m//a+1
+	return int(x*y)
+enter=input("").split()
+print(flagstone(int(enter[0]),int(enter[1]),int(enter[2])))
