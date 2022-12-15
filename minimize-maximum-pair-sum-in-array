@@ -1,0 +1,12 @@
+class Solution:
+    def minPairSum(self, nums: List[int]) -> int:
+        nums.sort()
+        cout,i,j,n=0,0,-1,len(nums)//2
+        while n:
+            add=nums[i]+nums[j]
+            if add>cout:
+                cout=add
+            j-=1
+            i+=1
+            n-=1
+        return cout
