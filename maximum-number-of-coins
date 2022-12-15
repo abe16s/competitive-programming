@@ -1,0 +1,11 @@
+class Solution:
+    def maxCoins(self, piles: List[int]) -> int:
+        total=0
+        x=len(piles)//3
+        piles.sort()
+        while len(piles)>x:
+            y=piles[-2]
+            total+=y
+            del piles[-2:]
+            
+        return total
