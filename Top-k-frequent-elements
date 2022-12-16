@@ -1,0 +1,5 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        n=list(set(nums))
+        n.sort(key=lambda i: nums.count(i),reverse=True)
+        return n[:k]
