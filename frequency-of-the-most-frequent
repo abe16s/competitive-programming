@@ -1,0 +1,11 @@
+class Solution:
+    def maxFrequency(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        l,win,i,cout=len(nums),0,0,1
+        for j in range(l):
+            while nums[j]*(j-i)-win > k:
+                win-=nums[i]
+                i+=1
+            win+=nums[j]
+            cout=max(cout,j-i+1)
+        return cout
