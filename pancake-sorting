@@ -1,0 +1,20 @@
+class Solution:
+    def pancakeSort(self, arr: List[int]) -> List[int]:
+        def swap(ind):
+            i=0
+            while i<ind:
+                arr[i],arr[ind]=arr[ind],arr[i]
+                i+=1
+                ind-=1
+        cout=[]
+        for j in range(len(arr)-1,-1,-1):
+            max_=j
+            for k in range(j,-1,-1):
+                if arr[k]>arr[max_]:
+                    max_=k
+            if max_!= j:
+                swap(max_)
+                swap(j)
+                cout.append(max_+1)
+                cout.append(j+1)
+        return cout
