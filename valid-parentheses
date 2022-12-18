@@ -1,0 +1,13 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        op=["(","[","{"]
+        clo=[")","]","}"]
+        opens=[]
+        for i in s:
+            if i in op:
+                opens.append(i)
+            elif opens and op[clo.index(i)]==opens[-1]:
+                opens.pop()
+            else:
+                return False
+        return not opens
