@@ -1,0 +1,10 @@
+class Solution:
+    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+        p=[[position[i],speed[i]] for i in range(len(speed))]
+        p.sort(key=lambda i: i[0], reverse=True)
+        fleet=[]
+        k=[(target-i[0])/i[1] for i in p]
+        for l in k:
+            if not fleet or l>fleet[-1]:
+                fleet.append(l)
+        return len(fleet)
