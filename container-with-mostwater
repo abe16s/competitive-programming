@@ -1,0 +1,13 @@
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        x=0
+        y=len(height)-1
+        area=0
+        while x!=y:
+            h=min(height[x],height[y])
+            area=max(area,(y-x)*h)
+            if h==height[x]:
+                x+=1
+            elif h==height[y]:
+                y-=1
+        return area
