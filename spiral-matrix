@@ -1,0 +1,27 @@
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        if not matrix: return []
+        sc,sr,ec,er=0,0,len(matrix[0]),len(matrix)
+        cout=[]
+        while sc<ec or sr<er:
+            if sr<er:
+                for i in range(sc,ec):
+                    cout.append(matrix[sr][i])
+                sr+=1
+
+            if sc<ec:
+                for j in range(sr,er):
+                    cout.append(matrix[j][ec-1])
+                ec-=1
+
+            if sr<er:
+                for k in range(ec-1,sc-1,-1):
+                    cout.append(matrix[er-1][k])
+                er-=1
+
+            if sc<ec:
+                for l in range(er-1,sr-1,-1):
+                    cout.append(matrix[l][sc])
+                sc+=1
+
+        return cout
