@@ -1,0 +1,13 @@
+class Solution:
+    def findTheWinner(self, n: int, k: int) -> int:
+        i=0
+        n=[i for i in range(1,n+1)]
+        while len(n)!=1:
+            j=i+k-1
+            while j>=len(n):
+                j=j-len(n)
+            n.remove(n[j])
+            i=j
+            if i>=len(n):
+                i=0
+        return n[0]
